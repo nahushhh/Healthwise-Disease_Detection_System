@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %} {% endblock %}
+{% block content %}
+
+<style>
+.login_container{
+   width: 50%;
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 55px;
+
+}
+.body{
+   background-color: #f1fafb
+}
+</style>
+         <div class="login_container">
+            <div class="news_section_2">
+                     <div class="contact_box" style="height: 350px; ">
+                        <h1 class="book_text">LOGIN</h1>
+						<form method="POST">
+						{% csrf_token %}
+                        <input type="text" class="Email_text" placeholder="Enter Email" name="un" required>
+                        <input type="password" class="Email_text" placeholder="Enter password" name="pw" required>
+		
+						<input style="margin-top: 20px; background-color: #ffff; border-radius: 10px;" class="send_bt" type="submit" value="Login">
+                        {% comment %} <div class="send_bt"><a href="#">SEND</a></div> {% endcomment %}
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      
+
+{% endblock %}

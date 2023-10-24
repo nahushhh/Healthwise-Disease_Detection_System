@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %}  {% endblock %}
+{% block content %}
+<h1> </h1>
+<style>
+
+.signup_container{
+   width: 50%;
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 55px;
+}
+
+</style>
+         <div class="signup_container">
+            <div class="news_section_2">
+                     <div class="contact_box" style="height: 350px; ">
+                        <h1 class="book_text">SIGN UP </h1>
+						<form method="POST">
+						{% csrf_token %}
+                        <input type="text" class="Email_text" placeholder="Enter Email" name="un" required>
+                        <input type="password" class="Email_text" placeholder="Enter password" name="pw1" required>
+						<input type="password" class="Email_text" placeholder="Enter password" name="pw2" required>
+						<input style="margin-top: 10px; background-color: #ffff; border-radius: 10px;" class="send_bt" type="submit" value="Sign Up">
+                        {% comment %} <div class="send_bt"><a href="#">SEND</a></div> {% endcomment %}
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+
+
+{% comment %} <form method="POST">
+{% csrf_token %}
+	<input type="text" name="un" placeholder="Enter Email" required >
+	<br><br>
+	<input type="password" name="pw1" placeholder="Enter password" required>
+	<br><br>
+	<input type="password" name="pw2" placeholder="Confirm password" required>
+	<br><br>
+	<input type="submit" value="Sign Up">
+</form>
+{{ msg }} {% endcomment %}
+{% endblock %}

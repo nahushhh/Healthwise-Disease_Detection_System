@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Landing Page{% endblock %}
+{% block content %}
+    <!-- contact section start -->
+      <div class="contact_section layout_padding margin_90">
+         <div class="container">
+            <h1 class="contact_taital">What we do</h1>
+            <div class="news_section_2">
+               <div class="row">
+                  <div class="col-md-6">
+                     <div class="icon_main">
+                        <div class="icon_7"><img src="{% static 'images/icon-7.png' %}"></div>
+                        <h4 class="diabetes_text">Diabetes and obesity Counselling </h4>
+                     </div>
+                     <div class="icon_main">
+                        <div class="icon_7"><img src="{% static 'images/icon-5.png' %}"></div>
+                        <h4 class="diabetes_text">Obstetrics and Gynsecology</h4>
+                     </div>
+                     <div class="icon_main">
+                        <div class="icon_7"><img src="{% static 'images/icon-6.png' %}"></div>
+                        <h4 class="diabetes_text">Surgical and medical Oncology</h4>
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="contact_box">
+                        <h1 class="book_text">Book Appoinment</h1>
+                        <input type="text" class="Email_text" placeholder="Name" name="Name">
+                        <input type="text" class="Email_text" placeholder="Email" name="Name">
+                        <textarea class="massage-bt" placeholder="Message" rows="5" id="comment" name="Message"></textarea>
+                        <div class="send_bt"><a href="#">SEND</a></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- contact section end -->
+      <!-- footer section start -->
+      <div class="footer_section layout_padding">
+    <div class="container">
+       <div class="row">
+          <div class="col-lg-3 col-sm-6">
+             <div class="footer_logo"><a href="index.html"><img src="{% static 'images/footer-logo.png' %}"></a></div>
+             <h1 class="adderss_text">Contact Us</h1>
+             <div class="map_icon"><img src="{% static 'images/map-icon.png' %}"><span class="paddlin_left_0">Lorem ipsum dolor sit</span></div>
+             <div class="map_icon"><img src="{% static 'images/call-icon.png' %}"><span class="paddlin_left_0">+7586656566</span></div>
+             <div class="map_icon"><img src="{% static 'images/mail-icon.png' %}"><span class="paddlin_left_0">volim@gmail.com</span></div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+             <h1 class="adderss_text">Doctors</h1>
+             <div class="hiphop_text_1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, minus </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+             <h1 class="adderss_text">Useful Links</h1>
+             <div class="Useful_text">Lorem ipsum dolor sit amet consectetur, adipisicing Lorem ipsum dolor sit amet.</div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+             <h1 class="adderss_text">Newsletter</h1>
+             <input type="text" class="Enter_text" placeholder="Enter your Email" name="Enter your Email">
+             <div class="subscribe_bt"><a href="#">Subscribe</a></div>
+             <div class="social_icon">
+                <ul>
+                   <li><a href="#"><img src="{% static 'images/fb-icon.png' %}"></a></li>
+                   <li><a href="#"><img src="{% static 'images/twitter-icon.png' %}"></a></li>
+                   <li><a href="#"><img src="{% static 'images/linkedin-icon.png' %}"></a></li>
+                   <li><a href="#"><img src="{% static 'images/instagram-icon.png' %}"></a></li>
+                </ul>
+             </div>
+          </div>
+       </div>
+    </div>
+ </div>
+      <!-- footer section end -->
+{% endblock %}

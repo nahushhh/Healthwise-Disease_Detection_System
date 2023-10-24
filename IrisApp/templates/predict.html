@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+
+{% block title %}Disease Prediction{% endblock %}
+
+{% block content %}
+<style>
+.predict_btn{
+ font-size: 20px;
+ border-radius:10px;
+}
+</style>
+
+
+{{ super }}
+  <h1 style="font-size: 40px; text-align: center;">Disease Detection</h1>
+  <hr>
+
+
+  {% comment %} <form method="POST" style="margin-top: 20px;">
+    {% csrf_token %}
+     <select multiple name="options" id="my-select" style="padding: 10px; font-size: 20px;">
+      {% for symptom in symptoms %}
+        <option value="{{symptom}}">{{symptom}}</option>
+      {% endfor %}
+    </select> 
+  </form> {% endcomment %}
+  <p> Enter the symptoms you're experiencing:</p>
+  <form method="POST" style="margin-top: 20px;">
+    {% csrf_token %}
+    <select multiple name="options" id="symptom-input" style="padding: 10px; font-size: 20px;">
+      {% for symptom in symptoms %}
+        <option value="{{symptom}}">{{symptom}}</option>
+      {% endfor %}
+    </select> <br><br>
+    <input class="predict_btn" type="submit" value="Predict" id="my-submit">
+    <script>console.log("Hello")</script>
+ 
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $('#symptom-input').select2({
+      placeholder: 'Select Symptoms',
+      allowClear: true
+    });
+  });
+
+  $('#my-submit').click(function() {
+    var selected = $('#symptom-input').val();
+    if (selected.length == 0) {
+      alert('Please select at least one symptom');
+      return false;
+    }
+  });
+
+  $('#symptom-input').on('select2:select', function (e) {
+    var data = e.params.data;
+    console.log(data);
+  });
+  
+</script>
+{% if result %}
+  {% for disease, probability in result.items %}
+      <h2 style="margin-top: 40px; font-size: 30px;">Disease: {{ disease }}</h2>
+      <h2 style="font-size: 30px;">Probability: {{ probability }}%</h2>
+  {% endfor %}
+{% endif %}   
+
+  <div id="chart" style="margin-top: 40px;"></div>
+  <script>
+    var result = {{ result|safe }};
+    var data = result;  
+    var margin = {top: 20, right: 20, bottom: 30, left: 40},
+      width = 960 - margin.left - margin.right,
+      height = 500 - margin.top - margin.bottom;
+  
+    var x = d3.scaleBand()
+      .range([0, width])
+      .padding(0.1);
+  
+    var y = d3.scaleLinear()
+      .range([height, 0]);
+  
+    var svg = d3.select("#chart").append("svg")
+      .attr("width", width + margin.left + margin.right)
+      .attr("height", height + margin.top + margin.bottom)
+      .append("g")
+      .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+  
+    x.domain(Object.keys(data));
+    y.domain([0, d3.max(Object.values(data))]);
+
+    svg.selectAll(".bar")
+      .data(Object.entries(data))
+      .enter().append("rect")
+      .attr("class", "bar")
+      .attr("x", function(d) { return x(d[0]); })
+      .attr("width", x.bandwidth())
+      .attr("y", function(d) { return y(d[1]); })
+      .attr("height", function(d) { return height - y(d[1]); });
+  
+    svg.append("g")
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom(x));
+  
+    svg.append("g")
+      .call(d3.axisLeft(y));
+  </script>
+  {% if my_info %}
+    <h2 style="margin-top: 40px; font-size: 30px;">Information:</h2>
+    <ul style="list-style-type: none; padding-left: 0; text-decoration:justify; width: 90%; margin-left:auto; margin-right:auto; text-aligh:left;">
+      {% for info in my_info %}
+        <li style="font-size: 20px; text-decoration:justify; width: 90%; margin-left:auto; margin-right:auto; text-align:left;">{{ info }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+  
+{% endblock %}

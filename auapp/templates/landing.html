@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Landing Page{% endblock %}
+{% block content %}
+    <div id="main_slider" class="carousel slide" data-ride="carousel" >
+           <div class="carousel-inner" style="background-image: url(/static/images/banner-bg.png);">
+              <div class="carousel-item active" style="background-image: url(/static/images/banner-bg.png);">
+                 <div class="banner_section">
+                    <div class="container">
+                       <div class="row">
+                          <div class="col-md-6">
+                             <h1 class="banner_taital"><span style="color: #001128;">Health</span> <br>Wise</h1>
+                             <p class="banner_text">Healthcare Especially For You.</p>
+                             <div class="btn_main">
+                                <div class="more_bt"><a href="{% url 'contact' %}" style="margin-left:120px;">Contact Now</a></div>
+                                <div class="contact_bt"><a href="{% url 'contact' %}"style="margin-left:120px;">Get A Quote</a></div>
+                             </div>
+                          </div>
+                          <div class="col-md-6">
+                             <div class="image_1"><img src="{% static 'images/img-1.png' %}"></div>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+              <div class="carousel-item" style="background-image: url(/static/images/banner-bg.png);">
+                 <div class="banner_section" style="background-image: url(/static/images/banner-bg.png);">
+                    <div class="container">
+                       <div class="row">
+                          <div class="col-md-6">
+                             <h1 class="banner_taital"><span style="color: #001128;">Health </span><br>Wise</h1>
+                             <p class="banner_text">Healthcare Especially For You.</p>
+                             <div class="btn_main">
+                                <div class="more_bt"><a href="{% url 'user_login' %}" style="margin-left:120px;">Login</a></div>
+                                <div class="contact_bt"><a href="{% url 'user_signup' %}"style="margin-left:120px;">Sign Up</a></div>
+                             </div>
+                          </div>
+                          <div class="col-md-6">
+                             <div class="image_1"><img src="{% static 'images/img-1.png' %}"></div>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+           <!-- <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
+              <i class="fa fa-long-arrow-left" style="font-size:24px; padding-top: 4px;"></i>
+           </a>
+           <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
+              <i class="fa fa-long-arrow-right" style="font-size:24px; padding-top: 4px;"></i>
+           </a> -->
+        </div>
+     </div>
+
+
+     <!-- news section start -->
+<div class="news_section layout_padding">
+    <div class="container">
+       <h1 class="health_taital">Our Services</h1>
+       <p class="health_text">labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+       <div class="news_section_2 layout_padding">
+          <div class="row">
+             <div class="col-lg-4 col-sm-6">
+                <div class="box_main">
+                   <div class="icon_1"><img src="{% static 'images/icon-2.png' %}"></div>
+                   <h4 class="daily_text">Prediction of Disease <br> </h4> <br><br>
+                </div>
+             </div>
+             <div class="col-lg-4 col-sm-6">
+                <div class="box_main active">
+                   <div class="icon_1"><img src="{% static 'images/icon-3.png' %}"></div>
+                   <h4 class="daily_text_1">Find a Doctor<br> </h4> <br>
+                </div>
+             </div>
+             <div class="col-lg-4 col-sm-6">
+                <div class="box_main">
+                   <div class="icon_1"><img src="{% static 'images/icon-4.png' %}"></div>
+                   <h4 class="daily_text_1">Balanced care</h4> 
+                </div>
+             </div>
+          </div>
+       </div>
+       <div class="getquote_bt"><a href="{% url 'contact' %}">Get A Quote <span><img src="{% static 'images/right-arrow.png' %}"></span></a></div>
+    </div>
+ </div>
+ <!-- news section end -->
+
+
+<!-- footer section start -->
+  <div class="footer_section layout_padding">
+    <div class="container">
+       <div class="row">
+          <div class="col-lg-3 col-sm-6">
+             <div class="footer_logo"><a href="index.html"><img src="{% static 'images/footer-hw.png' %}"></a></div>
+             <h1 class="adderss_text">Contact Us</h1>
+             <div class="map_icon"><img src="{% static 'images/map-icon.png' %}"><span class="paddlin_left_0">Lorem ipsum dolor sit</span></div>
+             <div class="map_icon"><img src="{% static 'images/call-icon.png' %}"><span class="paddlin_left_0">+7586656566</span></div>
+             <div class="map_icon"><img src="{% static 'images/mail-icon.png' %}"><span class="paddlin_left_0">volim@gmail.com</span></div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+             <h1 class="adderss_text">Doctors</h1>
+             <div class="hiphop_text_1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, minus </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+             <h1 class="adderss_text">Useful Links</h1>
+             <div class="Useful_text">Lorem ipsum dolor sit amet consectetur, adipisicing Lorem ipsum dolor sit amet. </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+             <h1 class="adderss_text">Newsletter</h1>
+             <input type="text" class="Enter_text" placeholder="Enter your Email" name="Enter your Email">
+             <div class="subscribe_bt"><a href="#">Subscribe</a></div>
+             <div class="social_icon">
+                <ul>
+                   <li><a href="#"><img src="{% static 'images/fb-icon.png' %}"></a></li>
+                   <li><a href="#"><img src="{% static 'images/twitter-icon.png' %}"></a></li>
+                   <li><a href="#"><img src="{% static 'images/linkedin-icon.png' %}"></a></li>
+                   <li><a href="#"><img src="{% static 'images/instagram-icon.png' %}"></a></li>
+                </ul>
+             </div>
+          </div>
+       </div>
+    </div>
+ </div>
+ <!-- footer section end -->
+
+{% endblock %}
