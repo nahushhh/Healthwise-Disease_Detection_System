@@ -25,6 +25,7 @@ Features:
 5.WhatsApp Bot designed to relieve stress that could occur due to panic of being diagnosed by some disease
 
 Approach:
+
 1 Created the dataset from various trusted websites
 
 2. Converted the dataset into a format suitable for our application
@@ -38,6 +39,7 @@ Approach:
 6.Model selection and testing on new input
 
 Algorithms:
+
 1.GAUSSIAN NB
 Recall Score: 0.965
 Accuracy Score: 0.958
@@ -65,6 +67,7 @@ Accuracy Score: 0.955
 Used Random Forest(Tuned) and Weighted KNN to detect diseases.
 
 Societal Impact:
+
 1.This project can particularly benefit underserved communities with limited access to healthcare, providing them with a valuable resource for managing
 their health.
 
