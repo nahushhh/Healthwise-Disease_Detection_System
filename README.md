@@ -15,17 +15,26 @@ treatment.
 
 Features:
 1.Disease Detection
+
 2.First Aid and CPR Information
+
 3.Nearby Clinics Location
+
 4.Contact Doctor For Consultation
+
 5.WhatsApp Bot designed to relieve stress that could occur due to panic of being diagnosed by some disease
 
 Approach:
 1 Created the dataset from various trusted websites
+
 2. Converted the dataset into a format suitable for our application
+   
 3.Implementing Stratified K Fold as the dataset was imbalanced
+
 4.Trying and evaluating various algorithms
+
 5.Hyperparameter tuning
+
 6.Model selection and testing on new input
 
 Algorithms:
@@ -58,5 +67,7 @@ Used Random Forest(Tuned) and Weighted KNN to detect diseases.
 Societal Impact:
 1.This project can particularly benefit underserved communities with limited access to healthcare, providing them with a valuable resource for managing
 their health.
+
 2.It can promote early diagnosis and treatment, reducing the burden on healthcare systems and improving health outcomes.
+
 3.It can also increase health literacy with first aid and cpr guidance and help people make informed decisions about their well-being.
