@@ -75,4 +75,6 @@ their health.
 
 3.It can also increase health literacy with first aid and cpr guidance and help people make informed decisions about their well-being.
 
-Video demo - https://user-images.githubusercontent.com/100592839/230418529-0ba371d9-73ed-4ca6-bf70-c998475fed51.mp4
+Video:
+
+https://user-images.githubusercontent.com/100592839/230418529-0ba371d9-73ed-4ca6-bf70-c998475fed51.mp4
